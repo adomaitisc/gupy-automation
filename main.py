@@ -106,7 +106,7 @@ class GupyAutomation:
     # Get application urls from the jobs' data
     # Takes in a list of jobs and returns a list of application urls
     def get_applications(self, job):
-        split_url = job["url"].split("/job")
+        split_url = job["jobUrl"].split("/job")
         apply_url = APPLY_URL.replace("URL", split_url[0]).replace("ID", str(job["id"]))
         return apply_url
 
@@ -155,9 +155,8 @@ class GupyAutomation:
                 print(Fore.MAGENTA + "Skipped job." + Fore.RESET)
                 print()
             else:
-                #apply
                 print(Fore.MAGENTA + "Applying..." + Fore.RESET)
 
 if __name__ == "__main__":
-    GupyAutomation(get_jobs=False, apply_jobs=True)
+    GupyAutomation(get_jobs=True, apply_jobs=True)
 
