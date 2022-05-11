@@ -13,7 +13,6 @@ load_dotenv()
 # 2. Open developer tools and open the  console.
 # 3. Type without the quotes: "console.log(document.cookie)"
 RAW_COOKIES = os.getenv("RAW_COOKIES")
-print(RAW_COOKIES)
 
 QUERY_URL = "https://portal.api.gupy.io/api/job?name=TITLE&offset=0&limit=LIMIT" # Example: https://portal.api.gupy.io/api/job?name=Internship%20Developer&offset=0&limit=200
 
