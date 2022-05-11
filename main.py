@@ -2,13 +2,22 @@ import os
 import json
 import requests
 import urllib.parse
-from bs4 import BeautifulSoup
 from dotenv import load_dotenv
 from http.cookies import SimpleCookie
 
 load_dotenv()
+
+# The cookies are stored in a .env file, in a string format
+# How to collect the cookies in the correct format:
+# 1. Login to the gupy website using your browser.
+# 2. Open developer tools and open the  console.
+# 3. Type without the quotes: "console.log(document.cookie)"
 RAW_COOKIES = os.getenv("RAW_COOKIES")
-QUERY_URL = "https://portal.api.gupy.io/api/job?name=TITLE&offset=0&limit=LIMIT"
+
+QUERY_URL = "https://portal.api.gupy.io/api/job?name=TITLE&offset=0&limit=LIMIT" # Example: https://portal.api.gupy.io/api/job?name=Internship%20Developer&offset=0&limit=200
+
+# Search queries are in Portuguese(BR) because it is the language I am searching in.
+# You  can use any language you want as long as gupy is available in it.
 SEARCH_QUERIES = [
     "Estagio Front End",
     "Estagio Back End",
@@ -17,8 +26,8 @@ SEARCH_QUERIES = [
     "Estagio Desenvolvedor",
     "Desenvolvedor Junior"
 ]
-SEARCH_LIMIT = 20
-REMOTE_ONLY = False
+SEARCH_LIMIT = 20 # Limit of jobs to search for each query
+REMOTE_ONLY = False # If True, only search for remote jobs
 
 class GupyAutomation:
     def __init__(self):
