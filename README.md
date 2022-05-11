@@ -10,9 +10,10 @@ Sometimes applying for jobs can get tiring, and if you want to find one, you'll 
 
 - [x] Collect data from the website.
 - [x] Save data to an output file.
-- [ ] Login to the platform
-- [ ] Apply for a job automatically
-- [ ] Debug and polish
+- [x] Asks the user to choose what jobs to apply to.
+- [ ] Login to the platform (already made with cookies).
+- [ ] Apply for a job automatically.
+- [ ] Debug and polish.
 
 ## Author
 
